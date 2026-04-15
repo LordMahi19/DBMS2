@@ -26,12 +26,18 @@ setup:
 connect:
 	$(PSQL) $(DB_NAME)
 
+# Execute sql files
 init:
 	$(PSQL) $(DB_NAME) -f database_create_files/init.sql
 
 access_control:
 	$(PSQL) $(DB_NAME) -f database_create_files/access_control.sql
 
+tables:
+	$(PSQL) $(DB_NAME) -f database_create_files/tables.sql
+
+
+# reset and stop
 reset: start
 	$(PSQL) $(DB_NAME) -c "DROP SCHEMA public CASCADE; CREATE SCHEMA public;"
 	$(MAKE) init
