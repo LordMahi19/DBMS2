@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16
+    container_name: bidi-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bidi
+      POSTGRES_USER: postmanpat
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./database_create_files:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
