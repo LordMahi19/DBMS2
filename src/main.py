@@ -1,8 +1,15 @@
 import connection
 
+# main should create connection pooler and start the ui, but for now i put a simple demo here
+
+## you can use connectionpooler to get and return connections that execute queries
+
 def main():
 
-    conn, cur = connection.getDBConnection()
+    connectionpool = connection.connectionPooler()
+
+    c = connectionpool.get()
+    cur = c.cursor()
 
     cur.execute("""
         SELECT table_name
@@ -11,6 +18,10 @@ def main():
     """)
 
     print(cur.fetchall())
+
+    connectionpool.release(c)
+
+    connectionpool.clean()
 
 
 main()
