@@ -35,3 +35,15 @@ def getManualDBConnection():
         return -1
 
     return connection, cursor
+
+def execute(query, params=None):
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute(query, params or [])
+    
+    if query.strip().upper().startswith("SELECT"):
+        return cursor.fetchall()
+    else:
+        conn.commit()
+    return cursor.rowcount
