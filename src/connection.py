@@ -20,7 +20,7 @@ class connectionPooler:
         
 
 
-def getManualDBConnection():
+def getDBConnection():
 
     connection = psycopg2.connect(database="bidi", user="postmanpat", password="password", host="localhost", port="5432")
 
@@ -29,15 +29,15 @@ def getManualDBConnection():
 
     print("Connection succeeded")
 
-    cursor = connection.cursor()
+    # cursor = connection.cursor()
 
-    if cursor == None:
-        return -1
+    # if cursor == None:
+    #     return -1
 
-    return connection, cursor
+    return connection
 
 def execute(query, params=None):
-    conn = get_connection()
+    conn = getDBConnection()
     cursor = conn.cursor()
     
     cursor.execute(query, params or [])
