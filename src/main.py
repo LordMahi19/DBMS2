@@ -6,9 +6,10 @@ import connection
 
 def main():
 
-    connectionpool = connection.connectionPooler()
+    connection.init_pool()
+    cp = connection.get_pool()
 
-    c = connectionpool.get()
+    c = cp.get()
     cur = c.cursor()
 
     cur.execute("""
@@ -19,9 +20,9 @@ def main():
 
     print(cur.fetchall())
 
-    connectionpool.release(c)
+    cp.release(c)
 
-    connectionpool.clean()
+    cp.clean()
 
 
 main()

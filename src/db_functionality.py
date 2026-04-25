@@ -1,4 +1,4 @@
-from connection import execute
+from connection import init_pool, get_pool, execute
 
 
 def select(table, columns="*", where=None, orderBy=None, limit=None):
@@ -47,8 +47,13 @@ def update(table, data, where):
 
     return execute(query, list(data.values()) + list(where.values()))
 
+def get_project_members():
+
+    return select 
 
 if __name__ == "__main__":
+
+    init_pool()
 
     ## example inserts
 
