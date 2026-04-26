@@ -13,6 +13,8 @@ CREATE TRIGGER employee_works
 BEFORE DELETE ON employee
 FOR EACH ROW
 EXECUTE FUNCTION prevent_employee_delete();
+
+
 -- Validate project dates
 CREATE OR REPLACE FUNCTION validate_project_dates()
 RETURNS TRIGGER AS $$
