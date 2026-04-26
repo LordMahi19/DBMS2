@@ -65,6 +65,6 @@ CREATE TABLE partOf (
 CREATE TABLE has (
     RoleID integer NOT NULL references role(RoleID) ON DELETE CASCADE,
     EmpID integer NOT NULL references employee(EmpID) ON DELETE CASCADE,
-    description text
+    description text,
     PRIMARY KEY (RoleID, EmpID)
 );
