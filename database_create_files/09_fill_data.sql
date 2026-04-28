@@ -437,7 +437,6 @@ insert into works (PrID, EmpID, started) values (5, 2, '2025-04-03 04:23:33');
 insert into works (PrID, EmpID, started) values (22, 25, '2025-08-22 21:28:47');
 insert into works (PrID, EmpID, started) values (19, 72, '2025-05-30 16:58:12');
 insert into works (PrID, EmpID, started) values (24, 43, '2025-04-05 20:56:29');
-insert into works (PrID, EmpID, started) values (3, 30, '2025-03-26 10:35:47');
 insert into works (PrID, EmpID, started) values (6, 76, '2025-08-01 03:08:53');
 insert into works (PrID, EmpID, started) values (22, 63, '2025-04-23 01:19:15');
 insert into works (PrID, EmpID, started) values (18, 14, '2025-06-04 06:58:20');
@@ -448,7 +447,6 @@ insert into works (PrID, EmpID, started) values (17, 43, '2025-03-08 13:18:33');
 insert into works (PrID, EmpID, started) values (20, 100, '2025-05-19 14:05:52');
 insert into works (PrID, EmpID, started) values (13, 39, '2025-04-12 13:03:23');
 insert into works (PrID, EmpID, started) values (21, 8, '2025-07-29 03:10:23');
-insert into works (PrID, EmpID, started) values (12, 30, '2025-07-09 22:13:26');
 insert into works (PrID, EmpID, started) values (10, 28, '2025-08-28 22:13:13');
 insert into works (PrID, EmpID, started) values (23, 51, '2025-05-15 05:24:06');
 insert into works (PrID, EmpID, started) values (1, 29, '2025-06-20 12:27:08');
@@ -456,8 +454,6 @@ insert into works (PrID, EmpID, started) values (19, 58, '2025-08-16 15:04:51');
 insert into works (PrID, EmpID, started) values (22, 4, '2025-03-23 07:00:55');
 insert into works (PrID, EmpID, started) values (19, 62, '2025-07-19 10:50:40');
 insert into works (PrID, EmpID, started) values (22, 15, '2025-06-10 22:01:02');
-insert into works (PrID, EmpID, started) values (10, 2, '2025-04-16 06:50:29');
-insert into works (PrID, EmpID, started) values (23, 30, '2025-03-27 16:12:50');
 
 -- partof
 

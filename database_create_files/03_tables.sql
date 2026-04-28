@@ -11,6 +11,7 @@ CREATE TABLE customer (
     LID integer NOT NULL references location(LID),
     name varchar(100) NOT NULL,
     email varchar(100) UNIQUE
+    CHECK (email LIKE '%@%.%')
 );
 
 CREATE TABLE department (
@@ -34,6 +35,7 @@ CREATE TABLE employee (
     DepID integer NOT NULL references department(DepID),
     name varchar(100) NOT NULL,
     email varchar(100) NOT NULL UNIQUE
+    CHECK (email LIKE '%@%.%')
 );
 
 CREATE TABLE userGroup (
