@@ -1,4 +1,6 @@
 import connection
+from ui import main as start_ui
+
 # main should create connection pooler and start the ui, but for now i put a simple demo here
 
 ## you can use connectionpooler to get and return connections that execute queries
@@ -19,7 +21,6 @@ def main():
 
     cp.release(c)
 
-    from ui import main as start_ui
     start_ui()
 
     cp.clean()

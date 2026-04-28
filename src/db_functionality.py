@@ -63,12 +63,17 @@ def get_dep_headcount():
     table = "Employee e JOIN Department d ON e.DepID = d.DepID JOIN Location l on d.LID = l.LID"
     columns = "d.name, COUNT(e.EmpID) as n_of_employees, l.country"
     groupBy = "d.DepID, l.country"
+    orderBy = "n_of_employees DESC"
 
-    return select(table, columns, groupBy=groupBy)
+    return select(table, columns, groupBy=groupBy, orderBy=orderBy)
 
 
 def get_customer_value():
-    pass
+    table = "project p JOIN customer c ON p.CID = c.CID JOIN location l ON c.LID = l.LID"
+    columns = "c.name, SUM(p.budget) AS total_budget, l.country"
+    groupBy = "c.CID, c.name, l.country"
+
+    return select(table, columns, groupBy=groupBy)
 
 if __name__ == "__main__":
 
@@ -93,3 +98,4 @@ if __name__ == "__main__":
     print(select("Employee"))
     print(get_employee_dep_info())
     print(get_dep_headcount())
+    print(get_customer_value())
