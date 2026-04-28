@@ -29,13 +29,15 @@ def show_menu():
   1. List all employees
   2. List all projects
   3. Employee department info (3-table JOIN)
-  4. Department headcount (aggregation)
-  5. Add new employee
-  6. Update employee email
-  7. Delete employee (trigger demo)
-  8. Add project (constraint demo)
-  9. Switch database user (access control demo)
-  10. Run custom query
+  4. Department headcount (aggregation and 3-table JOIN)
+  5. Customer value (3-table JOIN)
+  6. Add new employee
+  7. Update employee email
+  8. Delete employee (trigger demo)
+  9. Add project (constraint demo)
+  10. Switch database user (access control demo)
+  11. project overview (view)
+  12. Run custom query
   0. Exit
 """)
 
@@ -59,9 +61,15 @@ def employee_dep_info():
     print_table(rows, ["Employee", "Department", "Address", "Country"])
 
 def dep_headcount():
-    menu_header("Department Headcount (Aggregation)")
+    menu_header("Department Headcount (Aggregation and 3-table JOIN)")
     rows = db.get_dep_headcount()
     print_table(rows, ["Department", "Employees", "Country"])
+
+def cust_value():
+    menu_header("Customer value (3-table JOIN)")
+    rows = db.get_customer_value()
+    print_table(rows, ["Customer_name", "total_budget", "Country"])
+
 
 def add_employee():
     menu_header("Add New Employee")
@@ -172,6 +180,11 @@ def switch_user():
     except Exception as e:
         print(f"\n  Connection failed: {e}")
 
+def project_overview():
+    menu_header("Project overview (view)")
+    rows = db.view_view()
+    print_table(rows, ["Project_name", "budget", "deadline", "customer_name"])
+
 def custom_query():
     menu_header("Custom Query")
     query = input("  Enter SQL: ").strip()
@@ -198,12 +211,14 @@ def main():
         "2": list_projects,
         "3": employee_dep_info,
         "4": dep_headcount,
-        "5": add_employee,
-        "6": update_employee,
-        "7": delete_employee,
-        "8": add_project,
-        "9": switch_user,
-        "10": custom_query,
+        "5": cust_value,
+        "6": add_employee,
+        "7": update_employee,
+        "8": delete_employee,
+        "9": add_project,
+        "10": switch_user,
+        "11": project_overview,
+        "12": custom_query,
     }
 
     while True:

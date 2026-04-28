@@ -75,6 +75,10 @@ def get_customer_value():
 
     return select(table, columns, groupBy=groupBy)
 
+
+def view_view():
+    return select("project_overview")
+
 if __name__ == "__main__":
 
     init_pool()
@@ -99,3 +103,4 @@ if __name__ == "__main__":
     print(get_employee_dep_info())
     print(get_dep_headcount())
     print(get_customer_value())
+    print(view_view())
